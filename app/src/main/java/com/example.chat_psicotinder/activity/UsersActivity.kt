@@ -27,8 +27,10 @@ class UsersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_users)
 
         FirebaseService.sharedPref = getSharedPreferences("sharedPref",Context.MODE_PRIVATE)
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
-            FirebaseService.token = it.token
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { result ->
+            if(result != null){
+                FirebaseService.token = result
+            }
         }
 
         userRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)

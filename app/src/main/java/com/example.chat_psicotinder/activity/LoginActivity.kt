@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import com.example.chat_psicotinder.R
 import com.google.firebase.auth.FirebaseAuth
@@ -43,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 auth!!.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) {
+                        Log.d("myTag", it.exception.toString());
                         if (it.isSuccessful) {
                             etEmail.setText("")
                             etPassword.setText("")

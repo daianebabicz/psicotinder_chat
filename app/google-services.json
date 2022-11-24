@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1068686246630",
+    "firebase_url": "https://psicotinder-chat-default-rtdb.firebaseio.com",
     "project_id": "psicotinder-chat",
     "storage_bucket": "psicotinder-chat.appspot.com"
   },

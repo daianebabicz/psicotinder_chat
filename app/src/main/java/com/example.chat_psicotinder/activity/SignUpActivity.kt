@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import com.example.chat_psicotinder.R
 import com.google.firebase.auth.FirebaseAuth
@@ -63,6 +64,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun registerUser(userName:String,email:String,password:String){
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
+
                 if (it.isSuccessful){
                     val user: FirebaseUser? = auth.currentUser
                     val userId:String = user!!.uid
